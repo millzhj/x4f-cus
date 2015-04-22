@@ -9,11 +9,11 @@
 	<name>x4f-cus</name>  
 	
 	<modules>
-		<module>common</module>
-		<module>exam</module>
-		<module>knowledge</module>
-		<module>web</module>
-		<module>learn</module>
+		<module>x4f-common</module>
+		<module>x4f-exam</module>
+		<module>x4f-knowledge</module>
+		<module>x4f-learn</module>
+		<module>x4f-web</module>
 	</modules>  
 	
 	<properties>
