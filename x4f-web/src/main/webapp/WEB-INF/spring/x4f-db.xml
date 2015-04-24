@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2011 Cloudera, Inc. All rights reserved. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:security="http://www.springframework.org/schema/security"
+        xsi:schemaLocation="
+                http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                http://www.springframework.org/schema/security  http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+        <!-- Load the spring placeholders -->
+        <context:property-placeholder location="classpath:webapp/WEB-INF/spring/placeholders.properties"/>
+
+        <!-- Only scan classes in a "components" package. We limit to these packages since Spring is pretty slow at component scanning -->
+        <context:component-scan base-package="com.cloudera.server.web.**.components">
+          <!-- We don't expect any controllers to be in a components package but just in case, don't double scan them -->
+          <context:exclude-filter type="regex" expression=".*Controller.*"/>
+        </context:component-scan>
+
+        <!-- Component scan any class that is a Controller. We use a resource-pattern since it is more efficient than filters -->
+        <context:component-scan base-package="com.cloudera.server.web" resource-pattern="**/*Controller*.class"/>
+
+        <security:global-method-security pre-post-annotations="enabled"/>
+
+        <!-- Configures Spring MVC -->
+        <import resource="mvc-config.xml" />
+</beans>

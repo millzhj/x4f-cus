@@ -20,7 +20,10 @@
 			<artifactId>x4f-common</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
-	</dependencies>
-
-
+		<dependency>
+			<groupId>com.x4f</groupId>
+			<artifactId>x4f-exam</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies> 
 </project>

@@ -6,6 +6,9 @@
         <dependent-module archiveName="x4f-common-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/x4f-common/x4f-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="x4f-exam-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/x4f-exam/x4f-exam">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="x4f-web"/>
         <property name="java-output-path" value="/x4f-web/target/classes"/>
     </wb-module>
